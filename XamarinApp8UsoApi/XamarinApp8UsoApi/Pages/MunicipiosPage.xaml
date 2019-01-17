@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApp8UsoApi.Pages.MunicipiosPage"
+             Title="Municipios">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#0D1F2D"
+                  Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Estado"
+                       TextColor="#FFC926"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       Grid.Row="0"
+                       Grid.Column="0"></Label>
+                <Label Text="UF"
+                       TextColor="#FFC926"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand"
+                       Grid.Row="0"
+                       Grid.Column="1"></Label>
+                <Label x:Name="LabelEstadoNome"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"
+                       Grid.Row="1"
+                       Grid.Column="0"></Label>
+                <Label x:Name="LabelEstadoSilga"
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"
+                       Grid.Row="1"
+                       Grid.Column="1"></Label>
+            </Grid>
+            <SearchBar HorizontalOptions="FillAndExpand"
+                   Placeholder="Digite para filtrar"
+                   TextChanged="FiltrarTextChanged"></SearchBar>
+            <StackLayout Padding="10">
+                <ListView x:Name="MunicipiosList"
+                          HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Nome}"
+                                      TextColor="#0D1F2D"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
